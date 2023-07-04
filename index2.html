@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body class="root" style="height: 2000px;">
+
+</body>
+<script>
+    window.clear
+    const gift = document.querySelector(".root")
+    gift.innerHTML = "<div class='animar' ></div>"
+    const anima = document.querySelector(".animar")
+    anima.innerHTML = "<img src='./images/animegirlkawai.gif'>"
+    let num = 1
+    const time = setInterval(() => {
+        if (num === 4) {
+            gift.removeChild(anima)
+            window.location.href = "index.html"
+            clearInterval(time)
+        }
+        num++
+    }, 1000)
+
+</script>
+<style>
+    .animar {
+        position: absolute;
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        background-color: rgba(39, 39, 39, .5);
+        justify-content: center;
+        align-items: center;
+    }
+
+    body {
+        overflow-y: none;
+    }
+</style>
+
+</html>
