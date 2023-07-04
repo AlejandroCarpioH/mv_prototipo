@@ -15,12 +15,12 @@
     const gift = document.querySelector(".root")
     gift.innerHTML = "<div class='animar' ></div>"
     const anima = document.querySelector(".animar")
-    anima.innerHTML = "<img src='./images/animegirlkawai.gif'>"
+    anima.innerHTML = "<img src='../images/animegirlkawai.gif'>"
     let num = 1
     const time = setInterval(() => {
         if (num === 4) {
             gift.removeChild(anima)
-            window.location.href = "index.html"
+            window.location.href = "../index.php"
             clearInterval(time)
         }
         num++

@@ -23,7 +23,7 @@ if ($result->num_rows == 1) {
     $results = $result->fetch_assoc();
     $con->close();
     if ($results["password"] == $password) {
-        header("Location: index2.html");
+        header("Location: ../pages/index2.html");
     } else {
         echo ("<script>alert(' usuario o contrasena incorrecta')</script>");
         echo '<script>window.location.href = "../index.php"</script>';
