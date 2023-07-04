@@ -26,10 +26,10 @@ if ($result->num_rows == 1) {
         header("Location: index2.html");
     } else {
         echo ("<script>alert(' usuario o contrasena incorrecta')</script>");
-        echo '<script>window.location.href = "./index.html"</script>';
+        echo '<script>window.location.href = "../index.php"</script>';
     }
 } else {
     echo ("<script>alert(' usuario o contrasena incorrecta')</script>");
-    echo '<script>window.location.href = "./index.html"</script>';
+    echo '<script>window.location.href = "../index.php"</script>';
     $con->close();
 }
