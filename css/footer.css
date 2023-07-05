@@ -3,7 +3,7 @@
 footer{
     position: relative;
     width: 100%;
-    height: 30rem;
+    /* height: 30rem; */
     background-color: rgb(41, 40, 57);
     & a,p{
         color: rgba(255, 255, 255, 0.5);
@@ -18,10 +18,10 @@ footer img{
     display: flex;
     justify-content: center;
     align-items: center;
-    position: absolute;
+    position: relative;
     bottom: 0%;
     width: 100%;
-    height: 10%;
+    /* height: 10%; */
     background-color: rgb(35, 34, 47);
 }
 .footer-top{
@@ -29,26 +29,33 @@ footer img{
 }
 .footer-top .container{
     display: grid;
-    height: 100%;
-    grid-template-columns: .8fr 1fr;
+    /* height: 100%; */
+    /* background-color: aqua; */
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 500px), 1fr));
+    gap: 60px;
 }
-.footer-brand{
+/* .footer-brand{
+    //width: 80%;
     position: relative;
     height: 100%;
-}
+} */
 
 footer .footer-brand-1{
     width: 50%;
     height: 100%;
     display: flex;
+    /* background-color: rgb(20, 43, 43); */
     gap: 30px;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 .footer-brand{
+    position: relative;
+    width: 100%;
     height: 100%;
     display: flex;
+    /* background-color: rgb(255, 0, 255); */
     justify-content: center;
     align-items: center;
 }
@@ -59,9 +66,12 @@ footer .footer-brand-1{
 }
 footer .footer-brand-2{
     width: 60%;
-    height: 50%;
-    gap: 30px;
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+    /* height: 50%; */
+   /* background-color: blueviolet; */
+
 
 }
 

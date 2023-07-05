@@ -113,7 +113,7 @@
                         <li>
                             <div class="blog-card">
                                 <figure class="blog-banner">
-                                    <iframe width="540" height="303" src="https://player.vimeo.com/video/808132939?color&autopause=0&loop=0&muted=0&title=1&portrait=1&byline=1#t=" title="Discapacidad y brechas de género en IDI de Mujeres Violeta TV" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                                    <iframe width="90%" height="auto" src="https://player.vimeo.com/video/808132939?color&autopause=0&loop=0&muted=0&title=1&portrait=1&byline=1#t=" title="Discapacidad y brechas de género en IDI de Mujeres Violeta TV" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
                                 </figure>
 
@@ -147,7 +147,7 @@
 
                                 <figure class="blog-banner">
 
-                                    <iframe width="540" height="303" src="https://player.vimeo.com/video/812629717?color&autopause=0&loop=0&muted=0&title=1&portrait=1&byline=1#t=" title="Discapacidad y brechas de género en IDI de Mujeres Violeta TV" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                                    <iframe width="90%" height="auto" src="https://player.vimeo.com/video/812629717?color&autopause=0&loop=0&muted=0&title=1&portrait=1&byline=1#t=" title="Discapacidad y brechas de género en IDI de Mujeres Violeta TV" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
                                 </figure>
 
@@ -176,9 +176,6 @@
 
                             </div>
                         </li>
-
-
-
                     </ul>
 
                 </div>
@@ -240,7 +237,7 @@
                                 <a href="mailto:soporte@mujeresvioleta.com" class="contact-link">
                                     <ion-icon name="mail-outline"></ion-icon>
 
-                                    <span>: soporte@mujeresvioleta.com</span>
+                                    <!-- <span>: soporte@mujeresvioleta.com</span> -->
                                 </a>
                             </li>
 
