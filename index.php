@@ -222,13 +222,13 @@
                             <label for="message">Mensaje*</label>
 
                             <textarea name="message" id="message" required placeholder="Escribe tu Mensaje" class="input-field"></textarea>
+                            <div class="buttom-contact-container">
+                                <button type="submit" class="btn btn-primary">
+                                    <span>Enviar</span>
 
-                            <button type="submit" class="btn btn-primary">
-                                <span>Enviar</span>
-
-                                <ion-icon name="paper-plane-outline"></ion-icon>
-                            </button>
-
+                                    <ion-icon name="paper-plane-outline"></ion-icon>
+                                </button>
+                            </div>
                         </form>
 
                         <ul class="contact-list">
@@ -237,7 +237,7 @@
                                 <a href="mailto:soporte@mujeresvioleta.com" class="contact-link">
                                     <ion-icon name="mail-outline"></ion-icon>
 
-                                    <!-- <span>: soporte@mujeresvioleta.com</span> -->
+                                    <span>: soporte@mujeresvioleta.com</span>
                                 </a>
                             </li>
 
