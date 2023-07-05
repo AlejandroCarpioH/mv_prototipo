@@ -1,6 +1,6 @@
 <header>
     <nav class="nav-container">
-        <a href="index.html" class="logo">
+        <a href="index.php" class="logo">
             <img src="./images/Logo-MV.Tv-8.png" alt="Landio logo">
         </a>
         <button class="menu-toggle-btn" data-nav-toggle-btn>

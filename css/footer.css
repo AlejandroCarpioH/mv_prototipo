@@ -49,6 +49,7 @@ footer .footer-brand-1{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+   
 }
 .footer-brand{
     position: relative;
@@ -65,10 +66,15 @@ footer .footer-brand-1{
     align-items: center;
 }
 footer .footer-brand-2{
-    width: 60%;
+    width: 90%;
+    padding: 30px;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 20px;
+    & li{
+        width: 100%;
+        /* background-color: blueviolet; */
+    }
     /* height: 50%; */
    /* background-color: blueviolet; */
 

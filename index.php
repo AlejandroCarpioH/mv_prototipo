@@ -113,32 +113,31 @@
                         <li>
                             <div class="blog-card">
                                 <figure class="blog-banner">
-                                    <iframe width="90%" height="auto" src="https://player.vimeo.com/video/808132939?color&autopause=0&loop=0&muted=0&title=1&portrait=1&byline=1#t=" title="Discapacidad y brechas de género en IDI de Mujeres Violeta TV" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                                    <iframe width="90%" height="90%" src="https://player.vimeo.com/video/808132939?color&autopause=0&loop=0&muted=0&title=1&portrait=1&byline=1#t=" title="Discapacidad y brechas de género en IDI de Mujeres Violeta TV" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
                                 </figure>
 
                                 <div class="blog-meta">
+                                    <div class="blog-meta-container">
+                                        <span>
+                                            <ion-icon name="calendar-outline"></ion-icon>
 
-                                    <span>
-                                        <ion-icon name="calendar-outline"></ion-icon>
+                                            <time datetime="2021-04-10">20 de Junio 2023</time>
+                                        </span>
 
-                                        <time datetime="2021-04-10">20 de Junio 2023</time>
-                                    </span>
+                                        <span>
+                                            <ion-icon name="person-outline"></ion-icon>
 
-                                    <span>
-                                        <ion-icon name="person-outline"></ion-icon>
+                                            <p>Margarita Alzáte</p>
+                                        </span>
 
-                                        <p>Margarita Alzáte</p>
-                                    </span>
+                                    </div>
+                                    <h3 class="blog-title">Conexión Con El Ser</h3>
 
+                                    <p class="blog-text">
+                                        La respiración como herramienta para sentir calma y bienestar
+                                    </p>
                                 </div>
-
-                                <h3 class="blog-title">Conexión Con El Ser</h3>
-
-                                <p class="blog-text">
-                                    La respiración como herramienta para sentir calma y bienestar
-                                </p>
-
                             </div>
                         </li>
 
@@ -147,32 +146,31 @@
 
                                 <figure class="blog-banner">
 
-                                    <iframe width="90%" height="auto" src="https://player.vimeo.com/video/812629717?color&autopause=0&loop=0&muted=0&title=1&portrait=1&byline=1#t=" title="Discapacidad y brechas de género en IDI de Mujeres Violeta TV" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                                    <iframe width="90%" height="90%" src="https://player.vimeo.com/video/812629717?color&autopause=0&loop=0&muted=0&title=1&portrait=1&byline=1#t=" title="Discapacidad y brechas de género en IDI de Mujeres Violeta TV" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
                                 </figure>
 
                                 <div class="blog-meta">
+                                    <div class="blog-meta-container">
+                                        <span>
+                                            <ion-icon name="calendar-outline"></ion-icon>
 
-                                    <span>
-                                        <ion-icon name="calendar-outline"></ion-icon>
+                                            <time datetime="2021-04-10">18 de junio 2023</time>
+                                        </span>
 
-                                        <time datetime="2021-04-10">18 de junio 2023</time>
-                                    </span>
+                                        <span>
+                                            <ion-icon name="person-outline"></ion-icon>
 
-                                    <span>
-                                        <ion-icon name="person-outline"></ion-icon>
+                                            <p>margarita alzárte</p>
+                                        </span>
+                                    </div>
+                                    <h3 class="blog-title">Salud Y Bienestar</h3>
 
-                                        <p>margarita alzárte</p>
-                                    </span>
-
+                                    <p class="blog-text">
+                                        Mantén el equilibro en 4 áreas de la vida que
+                                        son importantes para el bienestar
+                                    </p>
                                 </div>
-
-                                <h3 class="blog-title">Salud Y Bienestar</h3>
-
-                                <p class="blog-text">
-                                    Mantén el equilibro en 4 áreas de la vida que
-                                    son importantes para el bienestar
-                                </p>
 
                             </div>
                         </li>
@@ -193,11 +191,13 @@
                 <div class="container">
 
                     <h2 class="h2 section-title">Contactanos</h2>
+                    <div class="section-text-container">
 
-                    <p class="section-text">
-                        Queremos conocerte y trabajar contigo. Te invitamos a
-                        escribirnos para agendar una reunión karen.bruges@mujeres-violeta.com
-                    </p>
+                        <p class="section-text">
+                            Queremos conocerte y trabajar contigo. Te invitamos a
+                            escribirnos para agendar una reunión karen.bruges@mujeres-violeta.com
+                        </p>
+                    </div>
 
                     <div class="contact-wrapper">
 
