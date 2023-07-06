@@ -10,74 +10,79 @@
     <link rel="stylesheet" href="css/style.css">
     <!----===== Iconos unicons ===== -->
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    <link rel="stylesheet" href="adminPanel.css">
 
     <title> Panel de Administradyor </title>
 </head>
 
-<body>
-    <nav>
-        <div class="logo-name">
-            <div class="logo-image">
-                <img src="images/logo.png" alt="">
+<body class="body-adminPanel">
+    <nav class="nav-adminPanel">
+        <div class="adminPanel-container">
+            <div class="logo-container">
+                <div class="logo-image">
+                    <img src="../images/logo.png" alt="">
+                </div>
+
+                <span class="logo_name">Bienvenida Karen</span>
             </div>
 
-            <span class="logo_name">Bienvenida Karen</span>
-        </div>
+            <div class="menu-items">
+                <ul class="nav-links">
+                    <li><a href="#">
+                            <i class="uil uil-estate"></i>
+                            <span class="link-name">Resumen</span>
+                        </a></li>
+                    <li><a href="#">
+                            <i class="uil uil-users-alt"></i>
+                            <span class="link-name">Usuarios</span>
+                        </a></li>
+                    <li><a href="#">
+                            <i class="uil uil-chart"></i>
+                            <span class="link-name">Analíticas</span>
+                        </a></li>
+                    <li><a href="#">
+                            <i class="uil uil-comments"></i>
+                            <span class="link-name">Comentarios</span>
+                        </a></li>
+                    <li><a href="upload_page.php">
+                            <i class="uil uil-upload"></i>
+                            <span class="link-name">Subir Video</span>
+                        </a></li>
+                </ul>
 
-        <div class="menu-items">
-            <ul class="nav-links">
-                <li><a href="#">
-                        <i class="uil uil-estate"></i>
-                        <span class="link-name">Resumen</span>
-                    </a></li>
-                <li><a href="#">
-                        <i class="uil uil-users-alt"></i>
-                        <span class="link-name">Usuarios</span>
-                    </a></li>
-                <li><a href="#">
-                        <i class="uil uil-chart"></i>
-                        <span class="link-name">Analíticas</span>
-                    </a></li>
-                <li><a href="#">
-                        <i class="uil uil-comments"></i>
-                        <span class="link-name">Comentarios</span>
-                    </a></li>
-                <li><a href="upload_page.php">
-                        <i class="uil uil-upload"></i>
-                        <span class="link-name">Subir Video</span>
-                    </a></li>
-            </ul>
+                <ul class="logout-mode">
+                    <li><a href="logout.php">
+                            <i class="uil uil-signout"></i>
+                            <span class="link-name">Salir</span>
+                        </a></li>
 
-            <ul class="logout-mode">
-                <li><a href="logout.php">
-                        <i class="uil uil-signout"></i>
-                        <span class="link-name">Salir</span>
-                    </a></li>
+                    <li class="mode">
+                        <a href="#">
+                            <i class="uil uil-moon"></i>
+                            <span class="link-name">Modo Oscuro</span>
+                        </a>
 
-                <li class="mode">
-                    <a href="#">
-                        <i class="uil uil-moon"></i>
-                        <span class="link-name">Modo Oscuro</span>
-                    </a>
-
-                    <div class="mode-toggle">
-                        <span class="switch"></span>
-                    </div>
-                </li>
-            </ul>
+                        <div class="mode-toggle">
+                            <span class="switch"></span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
         </div>
     </nav>
 
     <section class="dashboard">
         <div class="top">
+
             <i class="uil uil-bars sidebar-toggle"></i>
+
 
             <div class="search-box">
                 <i class="uil uil-search"></i>
                 <input type="text" placeholder="Buscar...">
             </div>
 
-            <img src="images/profile.png" alt="">
+            <img src="../images/profile.png" alt="">
         </div>
 
         <div class="dash-content">
@@ -168,7 +173,8 @@
         </div>
     </section>
 
-    <script src="js/script_adp.js"></script>
+    <!-- <script src="js/script_adp.js"></script> -->
+    <script src="../js/adminPanel.js"></script>
 </body>
 
 </html>
