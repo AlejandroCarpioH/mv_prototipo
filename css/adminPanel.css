@@ -7,10 +7,18 @@
 }
 
 .dashboard{
+    margin-left: 20rem;
     z-index: 2;
     min-height: 100vh;
     background-color: white;
     overflow: hidden;
+    transition: all .5s;
+}
+.dashboard-reduce{
+    margin-left: 3rem;
+}
+.dashboard-reduce-mobile{
+    margin-left: 0;
 }
 /* logo */
 .logo-image{
@@ -22,34 +30,45 @@
 }
 
 .logo-container{
+    background-color: #707070;
     display: flex;
+    height: 5rem;
     justify-content: center;
     align-items: center;
 }
 
 .body-adminPanel{
     display: flex;
-    
+  
     /* display: grid;
     grid-template-columns: .22fr 1fr;
     transition: all .5s; */
     
 }
 .nav-adminPanel{
-    width: 20%;
+    width: 20rem;
+    /* max-width: 20%; */
+    /* background-color: #707070; */
     z-index: 1;
-    position: absolute;
-    transition: all .3s;
+  
+    transition: all .5s;
     height: 100vh;
     border-right: 1px solid black;
-    padding: 20px;
+    padding: 10px;
     box-sizing: border-box;
-    position: sticky;
+    position: fixed;
    
     top: 0;
     & li {
+        height: 30px;
+        /* width: 100%; */
         list-style: none;
         & a{
+            /* width: 100%; */
+            /* background-color: rebeccapurple; */
+            display: flex;
+            /* justify-content: center; */
+            /* background-color: rosybrown; */
             text-decoration: none;
             color: var(--text-adminPanel-color)
         }
@@ -57,7 +76,7 @@
     
 }
 .nav-adminPanel span{
-    position: absolute;
+    /* position: absolute; */
     transition: all .6s;
 }
 .adminPanel-container{
@@ -83,6 +102,11 @@
     justify-content: space-around;
     & li  {
         font-size: 1.5rem;
+        /* & a{
+            background-color: rgb(213, 196, 230);
+            display: flex;
+            justify-content: center;
+        } */
     }
     
 }
@@ -122,34 +146,53 @@ div[class='top'] input[type='checkbox']:checked ~ .container {
 /* esconde el nav cuanod la pantalla es mayor a 800px */
 .nav-adminPanelHidden .nav-adminPanel{
     
-    width: 0%;
-    padding: 0;
+    width: 3rem;
+    padding: 10px;
+    /* transition: all 1s; */
+    /* background-color: rebeccapurple; */
+    & span{
+        width: 0;
+        transition: width 0s 1s linear 1s ;
+        opacity: 0;
+         visibility: hidden;
+        
+    }
+    & li {
+        justify-content: center;
+    }
+    
+}
+/* esconde el nav cuanod la pantalla es menor a 800px <- falta arreglar la descripcion xd */
+
+.nav-adminPanelHiddenMobil .nav-adminPanel {
+
+    width: 0rem;
+  
+    border-right: 0px solid white;
+    
     & span{
         display: none;
         transition: opacity 0.2s linear;
         opacity: 0;
         
     }
-    
-}
-/* esconde el nav cuanod la pantalla es mayor a 800px */
 
-.nav-adminPanelHiddenMobil .nav-adminPanel {
-
-    width: 0%;
-    padding: 0;
-    & span{
-        display: none;
-        transition: opacity 0.2s linear;
-        opacity: 0;
-        
+    &li{
+        justify-content: center;
     }
 
 }
 
 @media (max-width: 800px) {
-    .nav-adminPanel span{
-        display: none;
+    .nav-adminPanel{
+        
+        width: 6rem;
+        & li{
+            justify-content: center;
+        }
+        & span {
+            display: none;
+        }
     }
 }
 @media (max-width: 500px) {
@@ -203,3 +246,4 @@ div[class='top'] input[type='checkbox']:checked ~ .container {
     }
 
 }
+    
