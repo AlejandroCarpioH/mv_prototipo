@@ -9,6 +9,41 @@
   
 }
 
+.session-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    width: 1000%;
+    height: 100%;
+    /* background-color: rebeccapurple; */
+    & li {
+        list-style: none;
+    }
+}
+.session{
+
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    padding: 0px 40px 0px 0px;
+    top: 0;
+    width: 100%;
+    & p {
+        font-size: 1.5em;
+    }
+    & a{
+        font-size: 1em;
+        &:hover{
+            transition: all .3s;
+            color: rgb(121, 0, 0);
+        }
+    }
+}
+
+
+
 .login::backdrop{
     background-color: rgba(39, 39, 39, 0.9);
     

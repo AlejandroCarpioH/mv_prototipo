@@ -21,8 +21,18 @@
 
         </div>
         <div class="header-actions">
-            <a class="header-action-link login-session">Iniciar Sesion</a>
-            <a class="header-action-link registration-buttom">Registrate</a>
+            <?php if (!isset($_SESSION['username'])) { ?>
+                <a class="header-action-link login-session">Iniciar Sesion</a>
+                <a class="header-action-link registration-buttom">Registrate</a>
+            <?php } else { ?>
+                <div class="session-container">
+                    <div class="session">
+                        <P>Bienvenid@ <?php echo ($_SESSION['username']) ?></P>
+                        <a href="../MV_PROTOTIPO_2/php/logout.php">Cerrar Session</a>
+                    </div>
+                    <li> <a href="..//MV_PROTOTIPO_2/pages/adminPanel.php"> Ir a Panel Administrador</a></li>
+                </div>
+            <?php } ?>
         </div>
     </nav>
 </header>

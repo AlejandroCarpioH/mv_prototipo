@@ -4,15 +4,17 @@
 }
 :root{
     --text-adminPanel-color: #707070;
+    --transition-nav-dashboard: .3s;
+    --initialWidth-nav-dasboard : 15rem;
 }
 
 .dashboard{
-    margin-left: 20rem;
+    margin-left: var(--initialWidth-nav-dasboard);
     z-index: 2;
     min-height: 100vh;
     background-color: white;
     overflow: hidden;
-    transition: all .5s;
+    transition: all var(--transition-nav-dashboard);
 }
 
 /* logo */
@@ -25,7 +27,7 @@
 }
 
 .logo-container{
-    background-color: #707070;
+    /* background-color: #707070; */
     display: flex;
     height: 5rem;
     justify-content: center;
@@ -40,29 +42,20 @@
 
 /* nav */
 .nav-adminPanel{
-    width: 20rem;
-    /* max-width: 20%; */
-    /* background-color: #707070; */
+    width: var(--initialWidth-nav-dasboard);
     z-index: 1;
-  
-    transition: all .5s;
+    transition: all var(--transition-nav-dashboard);
     height: 100vh;
     border-right: 1px solid black;
     padding: 14px;
     box-sizing: border-box;
-    position: fixed;
-   
+    position: fixed; 
     top: 0;
     & li {
         height: 30px;
-        /* width: 100%; */
         list-style: none;
         & a{
-            /* width: 100%; */
-            /* background-color: rebeccapurple; */
             display: flex;
-            /* justify-content: center; */
-            /* background-color: rosybrown; */
             text-decoration: none;
             color: var(--text-adminPanel-color)
         }
@@ -70,7 +63,6 @@
     
 }
 .nav-adminPanel span{
-    /* position: absolute; */
     transition: all .6s;
 }
 .adminPanel-container{
@@ -88,19 +80,25 @@
     
 }
 .nav-links{
-    /* background-color: rebeccapurple; */
     padding-top: 5rem;
     height: 60%;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+    & .link-name{
+        width: 10rem;
+        position: absolute;
+        left: 3rem;
+    }
+
     & li  {
         font-size: 1.5rem;
-        /* & a{
-            background-color: rgb(213, 196, 230);
+        & a{
+            width: 100%;
+        
             display: flex;
-            justify-content: center;
-        } */
+            justify-content: start;
+        }
     }
     
 }
@@ -111,15 +109,12 @@
 .close{
     
     width: 3rem;
-    /* padding: 10px; */
-    /* transition: all 1s; */
-    /* background-color: rebeccapurple; */
     & span{
-        width: 0;
-        transition: width 0s 1s linear 1s ;
-        opacity: 0;
-         visibility: hidden;
         
+        width: 0;
+        transition: 1s ;
+        opacity: 0;
+         visibility: hidden;      
     }
     & li {
         justify-content: center;
@@ -129,27 +124,9 @@
 .close ~ .dashboard{
     margin-left: 3rem;
 }
-.closeee{
 
-    width: 0rem;
-    border-right: 0px solid white;
-    & span{
-        display: none;
-        transition: opacity 0.2s linear;
-        opacity: 0;   
-    }
-    &li{
-        justify-content: center;
-    }
 
-}
-
-body .dashboard-open{
-    margin-left: 20rem;
-}
-body .dashboard-reduce-mobile{
-    margin-left: 0;
-}
+/* end open close */
 
 .boxes .box{
     width: 100%;
@@ -157,24 +134,13 @@ body .dashboard-reduce-mobile{
     background-color: blueviolet;
     border-radius: 20px;
 }
-body .nav-adminPanelOpen{
-    width: 20rem;
-}
-/* esconde el nav cuanod la pantalla es mayor a 800px */
-
-/* end open close */
-
 
 
 div[class='top']{
     display: flex;
 }
 
-/* input[type='checkbox'] ~ .container{
-    width: 200px;
-    height: 200px;
-    background-color: rebeccapurple;
-} */
+
 div[class='top'] input[type='checkbox']:checked ~ .container {
     background-color: rebeccapurple;
 }
@@ -190,21 +156,39 @@ div[class='top'] input[type='checkbox']:checked ~ .container {
     box-sizing: border-box;
 }
 
-
+/* media queries */
 
 @media (max-width: 1000px) {
-   
     .nav-adminPanel{
         width: 3rem;   
         & ~ .dashboard{
             margin-left: 3rem;
         }
-    }     
-
+        & span{
+            width: 0;
+            transition: .5s ;
+            opacity: 0;
+             visibility: hidden;      
+        }
+        & li {
+            justify-content: center;
+        }
+        
+    }  
+    /* nav open */
     .open{
         width: 20rem;
         & ~ .dashboard{
             margin-left: 20rem;
+        }
+        & span{
+            width: 0;
+            transition: width 0s 1s linear 1s ;
+            opacity: 1;
+            visibility: initial;      
+        }
+        & li {
+            justify-content: center;
         }
     }
 }
@@ -221,7 +205,6 @@ div[class='top'] input[type='checkbox']:checked ~ .container {
         left: 0;
         height: 4rem;
         background-color: white;
-
     }
 
     .nav-adminPanel{
@@ -229,7 +212,18 @@ div[class='top'] input[type='checkbox']:checked ~ .container {
         & ~ .dashboard{
             margin-left: 3rem;
         }
+        & span{
+            width: 0;
+            transition: width 0s 1s linear 1s ;
+            opacity: 0;
+             visibility: hidden;      
+        }
+        & li {
+            justify-content: center;
+        }
+        
     }
+    /* nav close */
     .close{
         width: 0;
         & ~ .dashboard{

@@ -1,16 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 
+<?php session_start() ?>
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="./css/style.css">
-    <link rel="stylesheet" href="./css/login.css">
-    <link rel="stylesheet" href="./css/contact.css">
-    <link rel="stylesheet" href="./css/footer.css">
-    <link rel="stylesheet" href="./css/header.css">
-    <link rel="stylesheet" href="./css/blog.css">
+    <link rel="stylesheet" href="./css/cssIndex/style.css">
+    <link rel="stylesheet" href="./css/cssIndex/login.css">
+    <link rel="stylesheet" href="./css/cssIndex/contact.css">
+    <link rel="stylesheet" href="./css/cssIndex/footer.css">
+    <link rel="stylesheet" href="./css/cssIndex/header.css">
+    <link rel="stylesheet" href="./css/cssIndex/blog.css">
     <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> -->
     <!-- <link
@@ -26,20 +28,26 @@
 
     <main>
         <!-- login -->
-        <dialog class="login">
-            <div class="exit-login">
-                <div class="line-1"></div>
-                <div class="line-2"></div>
-            </div>
-            <form action="./php/login.php" class="form form-login" method="post" name="login">
-                <h1 class="login-title">Iniciar Sesion</h1>
-                <input type="text" class="login-input" name="username" required placeholder="Username" autofocus="true" />
-                <input type="password" class="login-input" name="password" required placeholder="Password" />
-                <input type="submit" value="Login" name="submit" class="login-button" />
-                <p class="link"><a class="registration-buttom">Registrate</a></p>
 
-            </form>
+        <dialog class="login">
+            <?php if (!isset($_SESSION["username"])) { ?>
+                <div class="exit-login">
+                    <div class="line-1"></div>
+                    <div class="line-2"></div>
+                </div>
+                <form action="./php/login.php" class="form form-login" method="post" name="login">
+                    <h1 class="login-title">Iniciar Sesion</h1>
+                    <input type="text" class="login-input" name="username" required placeholder="Username" autofocus="true" />
+                    <input type="password" class="login-input" name="password" required placeholder="Password" />
+                    <input type="submit" value="Login" name="submit" class="login-button" />
+                    <p class="link"><a class="registration-buttom">Registrate</a></p>
+
+                </form>
+            <?php } else {
+                echo ("<div class='sessionIsStarted'></div>");
+            } ?>
         </dialog>
+
 
         <!-- registro -->
 

@@ -1,5 +1,13 @@
 <!DOCTYPE html>
 <html lang="es">
+<?php
+session_start();
+
+if (!$_SESSION['username']) {
+    header("Location: ../index.php");
+}
+
+?>
 
 <head>
     <meta charset="UTF-8">
@@ -10,7 +18,7 @@
     <!-- <link rel="stylesheet" href="css/style.css"> -->
     <!----===== Iconos unicons ===== -->
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
-    <link rel="stylesheet" href="../css/adminPanel.css">
+    <link rel="stylesheet" href="../css/cssAdminPanel/adminPanel.css">
 
     <title> Panel de Administradyor </title>
 </head>
@@ -23,11 +31,17 @@
                     <!-- <img src="../images/logo.png" alt=""> -->
                 </div>
 
-                <span class="logo_name">Bienvenida Karen</span>
+                <span class="logo_name">Bienvenid@ <?php echo ($_SESSION["username"]) ?></span>
             </div>
 
             <div class="menu-items">
                 <ul class="nav-links">
+                    <li>
+                        <a href="../index.php">
+                            <i class="uil uil-estate"></i>
+                            <span class="link-name">Inicio</span>
+                        </a>
+                    </li>
                     <li>
                         <a href="#">
                             <i class="uil uil-estate"></i>
@@ -53,7 +67,7 @@
                 </ul>
 
                 <ul class="logout-mode">
-                    <li><a href="logout.php">
+                    <li><a href="../php/logout.php">
                             <i class="uil uil-signout"></i>
                             <span class="link-name">Salir</span>
                         </a></li>

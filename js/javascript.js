@@ -4,6 +4,9 @@ const login = document.querySelector(".login");
 const registration = document.querySelector(".registration");
 const exitLogin = document.querySelectorAll(".exit-login");
 
+const dialog = document.querySelector("dialog");
+
+
 const lis = document.querySelectorAll(".navbar-list li")
 const body = document.querySelector("body")
 const nav = document.querySelector(".nav-container")
@@ -28,6 +31,10 @@ lis.forEach(li => {
 
 loginButton.forEach(v => {
     v.addEventListener("click", () => {
+        if (dialog.contains(document.querySelector(".sessionIsStarted"))) {
+            window.location.href = "pages/adminPanel.php"
+            return
+        }
         registration.close();
         login.showModal();
     })

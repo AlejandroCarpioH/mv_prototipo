@@ -1,7 +1,12 @@
 <?php
+session_start();
 
 require("./conection.php"); // $con
 
+if ($_SESSION["username"]) {
+    header("Location: ../pages/adminPanel.php");
+    exit();
+}
 
 
 $user = $_POST["username"];
@@ -23,7 +28,8 @@ if ($result->num_rows == 1) {
     $results = $result->fetch_assoc();
     $con->close();
     if ($results["password"] == $password) {
-        header("Location: ../pages/adminPanel.html");
+        $_SESSION["username"] = $user;
+        header("Location: ../pages/adminPanel.php");
     } else {
         echo ("<script>alert(' usuario o contrasena incorrecta')</script>");
         echo '<script>window.location.href = "../index.php"</script>';

@@ -29,10 +29,10 @@ if ($result->num_rows > 0) {
     $con->close();
 }
 
-$query = "INSERT INTO users VALUES(?,?,?,?)";
+$query = "INSERT INTO users (username, password, email, create_datetime, fecha_ingreso) VALUES(?,?,?,?,?)";
 $stmt = $con->prepare($query);
 
-$stmt->bind_param("ssss", $username, $password, $email, $date);
+$stmt->bind_param("sssss", $username, $password, $email, $date, $date);
 
 if ($stmt->execute()) {
     echo ("<script>alert('se registro correctamente')</script>");
