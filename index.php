@@ -1,7 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<?php session_start() ?>
+<?php
+
+session_start()
+?>
 
 <head>
     <meta charset="UTF-8">
@@ -112,6 +115,9 @@
             <section class="blog" id="blog">
                 <div class="container">
 
+
+                    <!-- vista de los videos -->
+
                     <h2 class="h2 section-title">Últimos Programas</h2>
 
                     <p class="section-text">
@@ -120,38 +126,51 @@
 
                     <ul class="blog-list">
 
-                        <li>
-                            <div class="blog-card">
-                                <figure class="blog-banner">
-                                    <iframe width="90%" height="90%" src="https://player.vimeo.com/video/808132939?color&autopause=0&loop=0&muted=0&title=1&portrait=1&byline=1#t=" title="Discapacidad y brechas de género en IDI de Mujeres Violeta TV" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
-                                </figure>
 
-                                <div class="blog-meta">
-                                    <div class="blog-meta-container">
-                                        <span>
-                                            <ion-icon name="calendar-outline"></ion-icon>
+                        <?php // <-- $response
+                        require_once("./php/getVideoVimeo.php");
+                        foreach ($response as $data) {
+                            echo "este es el numero " . count($response);
 
-                                            <time datetime="2021-04-10">20 de Junio 2023</time>
-                                        </span>
+                        ?>
+                            <li>
+                                <div class="blog-card">
+                                    <figure class="blog-banner">
+                                        <!-- <iframe width="90%" height="90%" src="https://player.vimeo.com/video/808132939?color&autopause=0&loop=0&muted=0&title=1&portrait=1&byline=1#t=" title="Discapacidad y brechas de género en IDI de Mujeres Violeta TV" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> -->
+                                        <?php
+                                        echo "{$data['embed']['html']}";
+                                        ?>
+                                    </figure>
 
-                                        <span>
-                                            <ion-icon name="person-outline"></ion-icon>
+                                    <div class="blog-meta">
+                                        <div class="blog-meta-container">
+                                            <span>
+                                                <ion-icon name="calendar-outline"></ion-icon>
 
-                                            <p>Margarita Alzáte</p>
-                                        </span>
+                                                <time datetime="2021-04-10">20 de Junio 2023</time>
+                                            </span>
 
+                                            <span>
+                                                <ion-icon name="person-outline"></ion-icon>
+
+                                                <p>Margarita Alzáte</p>
+                                            </span>
+
+                                        </div>
+                                        <h3 class="blog-title">Conexión Con El Ser</h3>
+
+                                        <p class="blog-text">
+                                            La respiración como herramienta para sentir calma y bienestar
+                                        </p>
                                     </div>
-                                    <h3 class="blog-title">Conexión Con El Ser</h3>
-
-                                    <p class="blog-text">
-                                        La respiración como herramienta para sentir calma y bienestar
-                                    </p>
                                 </div>
-                            </div>
-                        </li>
+                            </li>
+                        <?php
+                        }
+                        ?>
 
-                        <li>
+                        <!-- <li>
                             <div class="blog-card">
 
                                 <figure class="blog-banner">
@@ -183,7 +202,7 @@
                                 </div>
 
                             </div>
-                        </li>
+                        </li> -->
                     </ul>
 
                 </div>

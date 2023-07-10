@@ -7,6 +7,7 @@ const exitLogin = document.querySelectorAll(".exit-login");
 const dialog = document.querySelector("dialog");
 
 
+
 const lis = document.querySelectorAll(".navbar-list li")
 const body = document.querySelector("body")
 const nav = document.querySelector(".nav-container")
@@ -19,7 +20,7 @@ window.addEventListener("scroll", () => {
         nav.classList.remove("nav-reduce")
     }
 })
-
+// lis[0].classList = "decoration"
 lis.forEach(li => {
     li.addEventListener("click", () => {
         lis.forEach(v => {

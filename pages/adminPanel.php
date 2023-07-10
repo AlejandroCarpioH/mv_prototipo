@@ -73,14 +73,16 @@ if (!$_SESSION['username']) {
                         </a></li>
 
                     <li class="mode">
-                        <a href="#">
-                            <i class="uil uil-moon"></i>
-                            <span class="link-name">Modo Oscuro</span>
-                        </a>
+                        <label class="mode-toggle">
+                            <a>
+                                <i class="uil uil-moon"></i>
+                                <span class="link-name">Modo Oscuro</span>
+                            </a>
 
-                        <div class="mode-toggle">
+
+                            <input type="checkbox" name="" class="dark-mode" id="">
                             <span class="switch"></span>
-                        </div>
+                        </label>
                     </li>
                 </ul>
             </div>
@@ -94,8 +96,8 @@ if (!$_SESSION['username']) {
 
 
             <div class="search-box">
-                <i class="uil uil-search"></i>
-                <input type="text" placeholder="Buscar...">
+                <label for="search"><i class="uil uil-search"></i></label>
+                <input type="text" id="search" placeholder="Buscar...">
             </div>
 
             <img src="../images/profile.png" alt="">
@@ -134,7 +136,7 @@ if (!$_SESSION['username']) {
                 </div>
 
                 <div class="activity-data">
-                    <div class="data names">
+                    <div class="data-names">
                         <span class="data-title">Nombre</span>
                         <span class="data-list">Prem Shahi</span>
                         <span class="data-list">Deepa Chand</span>

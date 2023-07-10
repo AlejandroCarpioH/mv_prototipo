@@ -3,12 +3,6 @@ session_start();
 
 require("./conection.php"); // $con
 
-if ($_SESSION["username"]) {
-    header("Location: ../pages/adminPanel.php");
-    exit();
-}
-
-
 $user = $_POST["username"];
 $password = $_POST["password"];
 

@@ -1,0 +1,9 @@
+label{
+    display: flex;
+    width: 400px;
+    height: 400px;
+    background-color: rebeccapurple;
+    & ~ input[type='file']{
+        display: none;
+    }
+}

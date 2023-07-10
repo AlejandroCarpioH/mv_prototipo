@@ -30,7 +30,9 @@
                         <P>Bienvenid@ <?php echo ($_SESSION['username']) ?></P>
                         <a href="../MV_PROTOTIPO_2/php/logout.php">Cerrar Session</a>
                     </div>
-                    <li> <a href="..//MV_PROTOTIPO_2/pages/adminPanel.php"> Ir a Panel Administrador</a></li>
+                    <li>
+                        <a href="../MV_PROTOTIPO_2/pages/adminPanel.php"> Ir a Panel Administrador</a>
+                    </li>
                 </div>
             <?php } ?>
         </div>
