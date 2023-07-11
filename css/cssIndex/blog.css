@@ -19,11 +19,18 @@ main> article{
 }
 .blog-banner{
     /* background-color: aquamarine; */
+    padding: 20px;
+    box-sizing: border-box;
     width: 100%;
-    height: 30vw;
+    height: 60vh;
     display: flex;
     justify-content: center;
     align-items: center;
+    /* background-color: aqua; */
+    & iframe{
+        width: 100%;
+        height: 100%;
+    }
 }
 
 .blog .container{
@@ -38,6 +45,15 @@ main> article{
         list-style: none;
     }
 }
+.blog-card{
+    position: relative;
+    width: 100%;
+    height: 80vh;
+    background-color: rebeccapurple;
+
+
+}
+
 .blog-meta{
     padding-left: 50px;
     margin-top: 5px;

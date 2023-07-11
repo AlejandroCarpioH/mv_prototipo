@@ -113,10 +113,30 @@ session_start()
                 </div>
             </section>
             <section class="blog" id="blog">
-                <div class="container">
+                <div class="root">
+                    <div class="root-container">
+                        <div class="img-container">
+                            <img src="https://live.mrf.io/statics/i/ps/maduradas.com/wp-content/uploads/2022/06/lana-rhoades.jpg?width=1200&enable=upscale" alt="">
+                        </div>
+                        <div class="img-container">
+                            <img src="https://live.mrf.io/statics/i/ps/maduradas.com/wp-content/uploads/2022/06/lana-rhoades.jpg?width=1200&enable=upscale" alt="">
+                        </div>
+                        <div class="img-container">
+                            <img src="https://live.mrf.io/statics/i/ps/maduradas.com/wp-content/uploads/2022/06/lana-rhoades.jpg?width=1200&enable=upscale" alt="">
+                        </div>
+                        <div class="img-container">
+                            <img src="https://live.mrf.io/statics/i/ps/maduradas.com/wp-content/uploads/2022/06/lana-rhoades.jpg?width=1200&enable=upscale" alt="">
+                        </div>
+                    </div>
+                    <div class="view">
+                        asdsad
+                        holaasdasdasdasdasdasdasd
+                    </div>
+                </div>
+                <!-- <div class="container">
 
 
-                    <!-- vista de los videos -->
+                    vista de los videos
 
                     <h2 class="h2 section-title">Últimos Programas</h2>
 
@@ -129,83 +149,49 @@ session_start()
 
 
                         <?php // <-- $response
-                        require_once("./php/getVideoVimeo.php");
-                        foreach ($response as $data) {
-                            echo "este es el numero " . count($response);
+                        // require_once("./php/getVideoVimeo.php");
+                        // foreach ($response['body']['data'] as $data) {
+
 
                         ?>
-                            <li>
-                                <div class="blog-card">
-                                    <figure class="blog-banner">
-                                        <!-- <iframe width="90%" height="90%" src="https://player.vimeo.com/video/808132939?color&autopause=0&loop=0&muted=0&title=1&portrait=1&byline=1#t=" title="Discapacidad y brechas de género en IDI de Mujeres Violeta TV" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> -->
-                                        <?php
-                                        echo "{$data['embed']['html']}";
-                                        ?>
-                                    </figure>
-
-                                    <div class="blog-meta">
-                                        <div class="blog-meta-container">
-                                            <span>
-                                                <ion-icon name="calendar-outline"></ion-icon>
-
-                                                <time datetime="2021-04-10">20 de Junio 2023</time>
-                                            </span>
-
-                                            <span>
-                                                <ion-icon name="person-outline"></ion-icon>
-
-                                                <p>Margarita Alzáte</p>
-                                            </span>
-
-                                        </div>
-                                        <h3 class="blog-title">Conexión Con El Ser</h3>
-
-                                        <p class="blog-text">
-                                            La respiración como herramienta para sentir calma y bienestar
-                                        </p>
-                                    </div>
-                                </div>
-                            </li>
-                        <?php
-                        }
-                        ?>
-
-                        <!-- <li>
+                        <li>
                             <div class="blog-card">
-
                                 <figure class="blog-banner">
+                                    <iframe width="90%" height="90%" src="https://player.vimeo.com/video/808132939?color&autopause=0&loop=0&muted=0&title=1&portrait=1&byline=1#t=" title="Discapacidad y brechas de género en IDI de Mujeres Violeta TV" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                <?php
+                // echo "{$data['embed']['html']}";
+                ?>
+                </figure>
 
-                                    <iframe width="90%" height="90%" src="https://player.vimeo.com/video/812629717?color&autopause=0&loop=0&muted=0&title=1&portrait=1&byline=1#t=" title="Discapacidad y brechas de género en IDI de Mujeres Violeta TV" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                <div class="blog-meta">
+                    <div class="blog-meta-container">
+                        <span>
+                            <ion-icon name="calendar-outline"></ion-icon>
 
-                                </figure>
+                            <time datetime="2021-04-10">20 de Junio 2023</time>
+                        </span>
 
-                                <div class="blog-meta">
-                                    <div class="blog-meta-container">
-                                        <span>
-                                            <ion-icon name="calendar-outline"></ion-icon>
+                        <span>
+                            <ion-icon name="person-outline"></ion-icon>
 
-                                            <time datetime="2021-04-10">18 de junio 2023</time>
-                                        </span>
+                            <p>Margarita Alzáte</p>
+                        </span>
 
-                                        <span>
-                                            <ion-icon name="person-outline"></ion-icon>
+                    </div>
+                    <h3 class="blog-title">Conexión Con El Ser</h3>
 
-                                            <p>margarita alzárte</p>
-                                        </span>
-                                    </div>
-                                    <h3 class="blog-title">Salud Y Bienestar</h3>
-
-                                    <p class="blog-text">
-                                        Mantén el equilibro en 4 áreas de la vida que
-                                        son importantes para el bienestar
-                                    </p>
-                                </div>
-
-                            </div>
-                        </li> -->
-                    </ul>
-
+                    <p class="blog-text">
+                        La respiración como herramienta para sentir calma y bienestar
+                    </p>
                 </div>
+                </div>
+                </li>
+                <?php
+                // }
+                ?>
+                </ul>
+
+                </div> -->
             </section>
 
 
