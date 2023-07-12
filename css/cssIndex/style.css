@@ -214,6 +214,7 @@ section .root{
 }
 section .root-container{
     display: grid;
+    position: relative;
     grid-template-columns: repeat(auto-fill, minmax(min(400px, 100%), 1fr));
     gap: 20px;
     height: 100%;
@@ -223,5 +224,15 @@ section .root-container{
         width: 90%;
         height: 315px;
     }
+    & iframe{
+        width: 90%;
+        height: 315px;
+    }
     
+}
+
+.img-container{
+    background-color: rgb(146, 117, 175);
+    width: 100%;
+    height: 100%;
 }
