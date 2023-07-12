@@ -112,25 +112,21 @@ session_start()
 
                 </div>
             </section>
+            <?php if (!isset($_SESSION["username"])) {
+                $class = "noLogin";
+            } else {
+                $class = "login";
+            }
+            ?>
             <section class="blog" id="blog">
                 <div class="root">
-                    <div class="root-container">
-                        <div class="img-container">
-                            <img src="https://live.mrf.io/statics/i/ps/maduradas.com/wp-content/uploads/2022/06/lana-rhoades.jpg?width=1200&enable=upscale" alt="">
+                    <div>
+                        <div class="root-container" id=<?php echo $class ?>>
+
                         </div>
-                        <div class="img-container">
-                            <img src="https://live.mrf.io/statics/i/ps/maduradas.com/wp-content/uploads/2022/06/lana-rhoades.jpg?width=1200&enable=upscale" alt="">
+                        <div class="view">
+                            view
                         </div>
-                        <div class="img-container">
-                            <img src="https://live.mrf.io/statics/i/ps/maduradas.com/wp-content/uploads/2022/06/lana-rhoades.jpg?width=1200&enable=upscale" alt="">
-                        </div>
-                        <div class="img-container">
-                            <img src="https://live.mrf.io/statics/i/ps/maduradas.com/wp-content/uploads/2022/06/lana-rhoades.jpg?width=1200&enable=upscale" alt="">
-                        </div>
-                    </div>
-                    <div class="view">
-                        asdsad
-                        holaasdasdasdasdasdasdasd
                     </div>
                 </div>
                 <!-- <div class="container">

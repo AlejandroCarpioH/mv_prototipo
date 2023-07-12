@@ -86,10 +86,18 @@ const token = "c3f7f163af7c0c6e551889353efd682f"
 
 
 
-
 const apivideo = () => {
 
-    fetch("https://api.vimeo.com/me/videos", {
+    const divVideo = document.querySelector(".root > div > div")
+    let limit = 0
+    console.log(divVideo.id === "login")
+    if (divVideo.id === "login") {
+        limit = 20
+    } else {
+        limit = 1
+    }
+
+    fetch(`https://api.vimeo.com/me/videos?per_page=${limit}`, {
         method: "GET",
         headers: {
             'Authorization': 'Bearer ' + token,
@@ -106,6 +114,7 @@ const apivideo = () => {
                 const urlImg = sizes[5]['link_with_play_button']
                 const img = document.createElement('img')
                 const div = document.createElement("div")
+                div.classList = "video-container"
                 img.src = urlImg
 
 
@@ -124,9 +133,12 @@ const apivideo = () => {
 
                 div.appendChild(img)
                 rootContainer.appendChild(div)
+
+
             })
 
         }))
+
 
 
 
@@ -156,6 +168,8 @@ const apivideo = () => {
     //     }))
 }
 
+const videoContainer = document.querySelectorAll(".video-container")
+
 const observer = new IntersectionObserver((entries) => {
     if (entries[0].isIntersecting) {
         apivideo()
@@ -163,16 +177,18 @@ const observer = new IntersectionObserver((entries) => {
     }
 }, {
     root: root,
-    rootMargin: "100px"
+    rootMargin: "10px"
 })
 
 observer.observe(obser)
 
-// 
-var iframe = document.createElement('iframe');
-iframe.src = 'https://www.youtube.com/embed/';
-iframe.width = '560';
-iframe.height = '315';
-iframe.frameBorder = '0';
-iframe.allow = 'accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture';
-iframe.allowFullscreen = true;
+
+
+//
+// var iframe = document.createElement('iframe');
+// iframe.src = 'https://www.youtube.com/embed/';
+// iframe.width = '560';
+// iframe.height = '315';
+// iframe.frameBorder = '0';
+// iframe.allow = 'accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture';
+// iframe.allowFullscreen = true;
