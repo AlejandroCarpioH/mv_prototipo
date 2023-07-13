@@ -21,7 +21,10 @@ if (!$_SESSION['username']) {
     <div class="videos-container">
         <div class="video-play-container">
             <div class="video-play">
+                <div class="message">
 
+                    <p>ELEGIR ALGUN VIDEO</p>
+                </div>
 
             </div>
         </div>

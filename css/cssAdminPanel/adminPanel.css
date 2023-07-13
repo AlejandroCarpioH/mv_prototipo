@@ -19,7 +19,7 @@
     min-height: 100vh;
     background-color: white;
     overflow: hidden;
-    transition: all var(--transition-nav-dashboard);
+    transition: width var(--transition-nav-dashboard), margin-left var(--transition-nav-dashboard), background-color .2s;
 }
 
 /* logo */
@@ -49,7 +49,7 @@
 .nav-adminPanel{
     width: var(--initialWidth-nav-dasboard);
     z-index: 1;
-    transition: all var(--transition-nav-dashboard);
+    transition: width var(--transition-nav-dashboard), background-color .2s;
     height: 100vh;
     border-right: 1px solid black;
     padding: 14px;
@@ -399,6 +399,7 @@ div[class='top'] input[type='checkbox']:checked ~ .container {
 
 /* darkmode */
 .darkmode{
+    transition: all .2s;
     background-color: #292929   ;
     color: white;
     & i{

@@ -1,13 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap');
 *{
-    padding: 0;
     margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
     list-style: none;
 }
+
 body{
     background-color: black;
     color: white;
 }
 .videos{
+    margin-top: 10px;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(min(200px, 100%), 1fr));
     gap: 20px;
@@ -31,12 +35,22 @@ body{
 .video-play{
     width: 50%;
     height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
     /* background-color: red; */
     & iframe{
         width: 100%;
         height: 100%;
         border: none;
     }
+    & > div{
+        padding: 0 10px;
+        box-sizing: border-box;
+    }
+   
   
 }
 
@@ -66,6 +80,17 @@ body{
     height: 100%;
     border-radius: 10px;
     background-color: rgba(0, 0, 0,.5);    
+}
+
+/* message video  */
+
+.message{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    background-color: rgb(34, 34, 34);
+    justify-content: center;
+    align-items: center;
 }
 
 @media (max-width: 800px) {

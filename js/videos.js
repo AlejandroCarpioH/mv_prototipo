@@ -67,6 +67,7 @@ const getVideos = () => {
 
 
             div.addEventListener("click", (e) => {
+                window.scrollTo(0, 0)
                 const videosContainer = document.querySelectorAll(".videos .video-container")
                 videosContainer.forEach(v => {
                     v.classList.contains("playing") ? v.classList.remove("playing") : ""
@@ -75,9 +76,11 @@ const getVideos = () => {
                 // div.replaceChild(iframe, e.target)
                 videoPlay.innerHTML = ""
                 videoPlay.appendChild(iframe)
-                const li = document.createElement("li")
-                li.innerHTML = name
-                videoPlay.appendChild(li)
+                const div_2 = document.createElement("div")
+                const li_2 = document.createElement("li")
+                li_2.innerHTML = name
+                div_2.appendChild(li_2)
+                videoPlay.appendChild(div_2)
 
             })
 
@@ -92,11 +95,26 @@ const getVideos = () => {
 }
 
 getVideos()
-getVideos()
-getVideos()
-getVideos()
-getVideos()
-getVideos()
-getVideos()
-getVideos()
+// getVideos()
+// getVideos()
+// getVideos()
+// getVideos()
+// getVideos()
+// getVideos()
+// getVideos()
+// getVideos()
+// getVideos()
+// getVideos()
+// getVideos()
+// getVideos()
+// getVideos()
+// getVideos()
+// getVideos()
+// getVideos()
+// getVideos()
+// getVideos()
+// getVideos()
+// getVideos()
+// getVideos()
+// getVideos()
 console.log("asas")
