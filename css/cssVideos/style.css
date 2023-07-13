@@ -3,7 +3,10 @@
     margin: 0;
     list-style: none;
 }
-
+body{
+    background-color: black;
+    color: white;
+}
 .videos{
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(min(200px, 100%), 1fr));
@@ -39,23 +42,26 @@
 
 .videos img{
     border-radius: 10px;
+    &:hover{
+        cursor: pointer;
+        transition: all .3s;
+        transform: scale(1.05);
+    }
 
 }
 
 .videos .video-container{
     position: relative;
 }
-.playing img{
-    /* opacity: .5; */
-    /* filter: brightness(50%); */
-}
+
 .playing::before{
     position: absolute;
+    z-index: 1;
     display: flex;justify-content: center;
     align-items: center;
     color: rgb(204, 204, 204);
     font-size: 1.2em;
-    content: "Reproduciendo..";
+    content: "Reproduciendo...";
     width: 100%;
     height: 100%;
     border-radius: 10px;
@@ -65,5 +71,17 @@
 @media (max-width: 800px) {
     .video-play{
         width: 100%;
+    }
+}
+@media (max-width: 500px) {
+    
+    .videos{
+        margin-top: 40px;
+        background-color: blueviolet;
+        max-height: 55vh;
+        overflow: scroll;
+        & img:hover{
+         transform: scale(1);   
+        }
     }
 }
