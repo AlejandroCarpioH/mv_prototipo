@@ -6,7 +6,7 @@ require("./conection.php"); // $con
 $user = $_POST["username"];
 $password = $_POST["password"];
 
-$query = "SELECT password FROM users WHERE username = ?";
+$query = "SELECT password, type FROM users WHERE username = ?";
 
 $stmt = $con->prepare($query);
 
@@ -23,6 +23,8 @@ if ($result->num_rows == 1) {
     $con->close();
     if ($results["password"] == $password) {
         $_SESSION["username"] = $user;
+        $_SESSION["type"] = $results["type"];
+        // echo "<script>alert('" . $results['type'] . "')</script>";
         header("Location: ../pages/adminPanel.php");
     } else {
         echo ("<script>alert(' usuario o contrasena incorrecta')</script>");

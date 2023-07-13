@@ -3,7 +3,7 @@
 <?php
 session_start();
 
-if (!$_SESSION['username']) {
+if (!$_SESSION['username'] || $_SESSION['type'] != "admin") {
     header("Location: ../index.php");
 }
 
@@ -60,7 +60,7 @@ if (!$_SESSION['username']) {
                             <i class="uil uil-comments"></i>
                             <span class="link-name">Comentarios</span>
                         </a></li>
-                    <li><a href="upload_page.php">
+                    <li><a href="./uploadVideo.html">
                             <i class="uil uil-upload"></i>
                             <span class="link-name">Subir Video</span>
                         </a></li>

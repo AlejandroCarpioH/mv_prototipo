@@ -18,6 +18,7 @@ if (!$_SESSION['username']) {
 </head>
 
 <body>
+    <a href="../index.php">ir a inicio</a>
     <div class="videos-container">
         <div class="video-play-container">
             <div class="video-play">
