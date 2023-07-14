@@ -122,7 +122,13 @@ session_start()
                 <div class="root">
                     <div>
                         <div class="root-container" id=<?php echo $class ?>>
-                            <a href="./pages/videos.php">ir a todos los video</a>
+                            <?php
+                            if (isset($_SESSION['username'])) {
+                            ?>
+                                <a href="./pages/videos.php">ir a todos los video</a>
+                            <?php
+                            }
+                            ?>
                         </div>
                         <div class="view">
                             view

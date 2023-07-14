@@ -95,6 +95,34 @@ const getVideos = () => {
 }
 
 getVideos()
+
+// comment
+
+const comment = document.querySelector(".text-comment")
+const commentBox = document.querySelector(".comment-box")
+const inputCommnet = document.querySelector(".input-send-comment")
+
+comment.addEventListener("keypress", handleKey)
+inputCommnet.addEventListener("click", sendComment)
+
+function handleKey(event) {
+    if (event.key === "Enter") {
+        event.preventDefault()
+        sendComment()
+    }
+}
+function sendComment() {
+    if (comment.value != "") {
+        const div = document.createElement("div")
+        const p = document.createElement("p")
+        p.innerHTML = comment.value
+        div.appendChild(p)
+        commentBox.insertAdjacentElement('afterbegin', div)
+        comment.value = ""
+        comment.focus()
+    }
+}
+
 // getVideos()
 // getVideos()
 // getVideos()

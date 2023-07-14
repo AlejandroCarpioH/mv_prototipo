@@ -27,6 +27,18 @@ if (!$_SESSION['username']) {
                     <p>ELEGIR ALGUN VIDEO</p>
                 </div>
 
+
+            </div>
+            <div class="comment-container">
+                <div class="comment-box">
+                    <p>
+                        comentarios
+                    </p>
+                </div>
+                <div class="input-comment">
+                    <textarea placeholder="Escribir comentario" class="text-comment" name="" id="" cols="30" rows="10"></textarea>
+                    <input class="input-send-comment" type="submit" value="enter">
+                </div>
             </div>
         </div>
         <div class="videos">
