@@ -1,4 +1,51 @@
+import getLogin from './getLogin.js'
 
+const loginButtom = document.querySelector(".form-login input[type='buttom']")
+
+const isLogged = JSON.parse(localStorage.getItem('userValue'))?.log
+console.log(isLogged)
+
+loginButtom.addEventListener('click', () => {
+    const form = document.querySelector(".form-login")
+    const formchildren = []
+    for (let index = 0; index < form.children.length; index++) {
+        formchildren.push(form.children[index])
+    }
+
+    const user = form.elements['username'].value
+    const pass = form.elements['password'].value
+    form.innerHTML = "cargando..."
+    form.classList.toggle("loading-animate")
+    getLogin({ user, pass })
+        .then(response => {
+            const { log, username, type } = response
+            const values = {
+                log: log,
+                user: username,
+                type: type
+            }
+            setTimeout(() => {
+                form.innerHTML = ""
+                form.classList.toggle("loading-animate")
+                formchildren.map(childen => {
+                    form.append(childen)
+                })
+                location.reload()
+            }, 3000)
+            localStorage.setItem('userValue', JSON.stringify(values))
+            console.log(log, username, type)
+        })
+
+})
+
+if (isLogged) {
+    const headerActions = document.querySelector(".login-panel")
+    const sessionContainer = document.querySelector(".session-container")
+    const sessionWelcome = document.querySelector(".session-container .session p")
+    headerActions.classList.toggle("login-panel-hidden")
+    sessionContainer.classList.toggle("session-hidden")
+    sessionWelcome.innerHTML += JSON.parse(localStorage.getItem("userValue")).user
+}
 
 const loginButton = document.querySelectorAll(".login-session");
 const registrationButton = document.querySelectorAll(".registration-buttom");
@@ -45,6 +92,7 @@ loginButton.forEach(v => {
 
 registrationButton.forEach(v => {
     v.addEventListener("click", () => {
+        //console.log(JSON.parse(localStorage.getItem("userValue")))
         login.close()
         registration.showModal();
     })

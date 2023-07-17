@@ -3,7 +3,6 @@
 
 <?php
 
-session_start()
 ?>
 
 <head>
@@ -16,6 +15,7 @@ session_start()
     <link rel="stylesheet" href="./css/cssIndex/footer.css">
     <link rel="stylesheet" href="./css/cssIndex/header.css">
     <link rel="stylesheet" href="./css/cssIndex/blog.css">
+    <link rel="stylesheet" href="./css/cssAnimate/loading.css">
     <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> -->
     <!-- <link
@@ -33,22 +33,18 @@ session_start()
         <!-- login -->
 
         <dialog class="login">
-            <?php if (!isset($_SESSION["username"])) { ?>
-                <div class="exit-login">
-                    <div class="line-1"></div>
-                    <div class="line-2"></div>
-                </div>
-                <form action="./php/login.php" class="form form-login" method="post" name="login">
-                    <h1 class="login-title">Iniciar Sesion</h1>
-                    <input type="text" class="login-input" name="username" required placeholder="Username" autofocus="true" />
-                    <input type="password" class="login-input" name="password" required placeholder="Password" />
-                    <input type="submit" value="Login" name="submit" class="login-button" />
-                    <p class="link"><a class="registration-buttom">Registrate</a></p>
+            <div class="exit-login">
+                <div class="line-1"></div>
+                <div class="line-2"></div>
+            </div>
+            <form action="#" class="form form-login" method="post" name="login">
+                <h1 class="login-title">Iniciar Sesion</h1>
+                <input type="text" class="login-input" name="username" required placeholder="Username" autofocus="true" />
+                <input type="password" class="login-input" name="password" required placeholder="Password" />
+                <input type="buttom" value="Login" name="submit" class="login-button" />
+                <p class="link"><a class="registration-buttom">Registrate</a></p>
 
-                </form>
-            <?php } else {
-                echo ("<div class='sessionIsStarted'></div>");
-            } ?>
+            </form>
         </dialog>
 
 
@@ -311,6 +307,7 @@ session_start()
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
     <script type="module" src="./js/javascript.js"></script>
+    <!-- <script type="module" src="./js/login.js"></script> -->
 
 </body>
 

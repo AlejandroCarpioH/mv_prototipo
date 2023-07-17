@@ -21,23 +21,25 @@
 
         </div>
         <div class="header-actions">
-            <?php if (!isset($_SESSION['username'])) { ?>
+
+            <div class="login-panel">
                 <a class="header-action-link login-session">Iniciar Sesion</a>
                 <a class="header-action-link registration-buttom">Registrate</a>
-            <?php } else { ?>
-                <div class="session-container">
-                    <div class="session">
-                        <P>Bienvenid@ <?php echo ($_SESSION['username']) ?></P>
-                        <a href="../MV_PROTOTIPO_2/php/logout.php">Cerrar Session</a>
-                    </div>
-                    <?php if ($_SESSION['type'] == "admin") {  ?>
-                        <li>
-                            <a href="../MV_PROTOTIPO_2/pages/adminPanel.php"> Ir a Panel Administrador</a>
+            </div>
 
-                        </li>
-                    <?php } ?>
+            <div class="session-container session-hidden">
+                <div class="session">
+                    <P>Bienvenid@</P>
+                    <a href="../MV_PROTOTIPO_2/php/logout.php">Cerrar Session</a>
                 </div>
-            <?php } ?>
+
+                <li>
+                    <a href="../MV_PROTOTIPO_2/pages/adminPanel.php"> Ir a Panel Administrador</a>
+
+                </li>
+
+            </div>
+
         </div>
     </nav>
 </header>

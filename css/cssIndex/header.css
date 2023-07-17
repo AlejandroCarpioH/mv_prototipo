@@ -100,3 +100,10 @@ header{
     z-index: 10;
   
 }
+
+.login-panel-hidden{
+    display: none;
+}
+.session-hidden{
+    display: none;
+}

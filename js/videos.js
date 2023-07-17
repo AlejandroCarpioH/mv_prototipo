@@ -4,6 +4,8 @@ import getApiVimeo from "./getApiVimeo.js";
 const videos = document.querySelector(".videos")
 let observer = document.querySelector(".view")
 const videoPlay = document.querySelector(".video-play")
+const url = window.location.href
+const input_id_video = document.querySelector(".input-id-video")
 // console.log(root.lastElementChild)
 
 
@@ -45,8 +47,9 @@ const getVideos = () => {
 
             const { html } = value['embed']
             const { name } = value
+            const { uri } = value
             const { player_embed_url } = value
-            console.log(name)
+            const id_video = uri.split("/")[2]
             const { sizes } = value['pictures']
             const urlImg = sizes[5]['link_with_play_button']
             const li = document.createElement("li")
@@ -67,6 +70,7 @@ const getVideos = () => {
 
 
             div.addEventListener("click", (e) => {
+
                 window.scrollTo(0, 0)
                 const videosContainer = document.querySelectorAll(".videos .video-container")
                 videosContainer.forEach(v => {
@@ -81,6 +85,10 @@ const getVideos = () => {
                 li_2.innerHTML = name
                 div_2.appendChild(li_2)
                 videoPlay.appendChild(div_2)
+
+                input_id_video.value = id_video
+                // const newUrl = url + `?id_video=${id_video}`
+                // window.history.pushState({ patch: newUrl }, "", newUrl)
 
             })
 
@@ -103,7 +111,7 @@ const commentBox = document.querySelector(".comment-box")
 const inputCommnet = document.querySelector(".input-send-comment")
 
 comment.addEventListener("keypress", handleKey)
-inputCommnet.addEventListener("click", sendComment)
+// inputCommnet.addEventListener("click", sendComment)
 
 function handleKey(event) {
     if (event.key === "Enter") {
@@ -123,26 +131,6 @@ function sendComment() {
     }
 }
 
-// getVideos()
-// getVideos()
-// getVideos()
-// getVideos()
-// getVideos()
-// getVideos()
-// getVideos()
-// getVideos()
-// getVideos()
-// getVideos()
-// getVideos()
-// getVideos()
-// getVideos()
-// getVideos()
-// getVideos()
-// getVideos()
-// getVideos()
-// getVideos()
-// getVideos()
-// getVideos()
-// getVideos()
-// getVideos()
+getVideos()
+
 console.log("asas")

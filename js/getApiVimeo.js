@@ -10,7 +10,6 @@ export default function getApiVimeo({ limit }) {
     }).then(json => json.json()
         .then(data => {
             return data
-
         }))
 }
 

@@ -1,0 +1,21 @@
+.loading-animate::before{
+    content: "asasdsdd";
+    display: grid;
+    place-items: center;
+    width: 100px;
+    height: 100px;
+    border-radius: 100%;
+    background-color: rebeccapurple;
+    animation: mover 2s linear infinite ;
+}
+
+@keyframes mover {
+
+    0%{
+        transform: rotate(360deg)
+    }
+    100%{
+        transform: translate(360deg);
+    }
+   
+}

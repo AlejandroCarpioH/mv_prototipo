@@ -35,9 +35,12 @@ if (!$_SESSION['username']) {
                         comentarios
                     </p>
                 </div>
-                <div class="input-comment">
-                    <textarea placeholder="Escribir comentario" class="text-comment" name="" id="" cols="30" rows="10"></textarea>
-                    <input class="input-send-comment" type="submit" value="enter">
+                <div class="input-comment" id_video="">
+                    <form action="./setComment.php" method="post">
+                        <textarea placeholder="Escribir comentario" class="text-comment" name="comment" id="" cols="30" rows="10"></textarea>
+                        <input class="input-id-video" name="id_video" value="" hidden>
+                        <input class="input-send-comment" type="submit" value="enter">
+                    </form>
                 </div>
             </div>
         </div>
