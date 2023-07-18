@@ -2,8 +2,14 @@ const uil = document.querySelector(".sidebar-toggle")
 const navAdminPanel = document.querySelector(".nav-adminPanel")
 const darkmodecheckbox = document.querySelector(".dark-mode")
 
+
+const bodyHidden = document.querySelector(".hidden")
+bodyHidden.classList.toggle("hidden")
+
 const body = document.querySelector("body")
 const dashboard = document.querySelector(".dashboard")
+
+
 
 window.addEventListener("resize", () => {
     if (window.innerWidth < 500 || window.innerWidth > 1000) {

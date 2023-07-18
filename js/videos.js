@@ -1,4 +1,6 @@
-import getApiVimeo from "./getApiVimeo.js";
+import setComment from "./setComment.js"
+import getApiVimeo from "./getApiVimeo.js"
+import { getComment } from "./getComment.js"
 
 // const root = document.querySelector(".root")
 const videos = document.querySelector(".videos")
@@ -6,6 +8,7 @@ let observer = document.querySelector(".view")
 const videoPlay = document.querySelector(".video-play")
 const url = window.location.href
 const input_id_video = document.querySelector(".input-id-video")
+const commentContainer = document.querySelector(".comment-container")
 // console.log(root.lastElementChild)
 
 
@@ -80,6 +83,8 @@ const getVideos = () => {
                 // div.replaceChild(iframe, e.target)
                 videoPlay.innerHTML = ""
                 videoPlay.appendChild(iframe)
+
+                // agrega comentario
                 const div_2 = document.createElement("div")
                 const li_2 = document.createElement("li")
                 li_2.innerHTML = name
@@ -87,6 +92,9 @@ const getVideos = () => {
                 videoPlay.appendChild(div_2)
 
                 input_id_video.value = id_video
+                videoPlay.classList.add("true")
+                commentContainer.classList.remove("hidden")
+                handleComment({ id_video })
                 // const newUrl = url + `?id_video=${id_video}`
                 // window.history.pushState({ patch: newUrl }, "", newUrl)
 
@@ -101,17 +109,38 @@ const getVideos = () => {
     })
 
 }
+const comment = document.querySelector(".text-comment")
+const commentBox = document.querySelector(".comment-box")
+const inputCommnet = document.querySelector(".input-send-comment")
+
+function handleComment({ id_video }) {
+    getComment({ id_video })
+        .then(value => {
+            value.map(v => {
+                const { user, comment } = v
+                const div = document.createElement("div")
+                const p = document.createElement("p")
+                const userComment = document.createElement("p")
+                userComment.innerHTML = `usuario: ${user}`
+                userComment.classList = "user"
+                p.innerHTML = comment
+                p.classList = "comment"
+                div.appendChild(userComment)
+                div.appendChild(p)
+                div.classList = "commentVideo"
+                commentBox.insertAdjacentElement('afterbegin', div)
+                commentBox.scrollTo(0, 0)
+            })
+        })
+}
 
 getVideos()
 
 // comment
 
-const comment = document.querySelector(".text-comment")
-const commentBox = document.querySelector(".comment-box")
-const inputCommnet = document.querySelector(".input-send-comment")
 
 comment.addEventListener("keypress", handleKey)
-// inputCommnet.addEventListener("click", sendComment)
+inputCommnet.addEventListener("click", sendComment)
 
 function handleKey(event) {
     if (event.key === "Enter") {
@@ -121,11 +150,15 @@ function handleKey(event) {
 }
 function sendComment() {
     if (comment.value != "") {
-        const div = document.createElement("div")
-        const p = document.createElement("p")
-        p.innerHTML = comment.value
-        div.appendChild(p)
-        commentBox.insertAdjacentElement('afterbegin', div)
+        console.log(comment.value)
+        const comm = comment.value
+        const user = JSON.parse(localStorage.getItem('userValue'))?.user
+        const id_video = input_id_video.value
+        setComment({ user, id_video, comm })
+        setTimeout(() => {
+            handleComment({ id_video })
+        }, 1000)
+
         comment.value = ""
         comment.focus()
     }

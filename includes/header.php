@@ -30,7 +30,7 @@
             <div class="session-container session-hidden">
                 <div class="session">
                     <P>Bienvenid@</P>
-                    <a href="../MV_PROTOTIPO_2/php/logout.php">Cerrar Session</a>
+                    <a class="logOutSession" href="">Cerrar Session</a>
                 </div>
 
                 <li>

@@ -1,10 +1,27 @@
 import getLogin from './getLogin.js'
 
-const loginButtom = document.querySelector(".form-login input[type='buttom']")
-
 const isLogged = JSON.parse(localStorage.getItem('userValue'))?.log
+
+console.log(JSON.parse(localStorage.getItem('userValue'))?.type === 'admin')
+
+if (isLogged) {
+    const headerActions = document.querySelector(".login-panel")
+    const sessionContainer = document.querySelector(".session-container")
+    const sessionWelcome = document.querySelector(".session-container .session p")
+    const containerLink = document.querySelector("section .root-container")
+
+    containerLink.classList.toggle('hidden')
+
+
+
+    headerActions.classList.toggle("login-panel-hidden")
+    sessionContainer.classList.toggle("session-hidden")
+    sessionWelcome.innerHTML += JSON.parse(localStorage.getItem("userValue")).user
+}
+const loginButtom = document.querySelector(".form-login input[type='buttom']")
 console.log(isLogged)
 
+// login
 loginButtom.addEventListener('click', () => {
     const form = document.querySelector(".form-login")
     const formchildren = []
@@ -24,28 +41,34 @@ loginButtom.addEventListener('click', () => {
                 user: username,
                 type: type
             }
-            setTimeout(() => {
-                form.innerHTML = ""
-                form.classList.toggle("loading-animate")
-                formchildren.map(childen => {
-                    form.append(childen)
-                })
-                location.reload()
-            }, 3000)
+
+
+            form.innerHTML = ""
+            form.classList.toggle("loading-animate")
+            formchildren.map(childen => {
+                form.append(childen)
+            })
+            type === 'admin' ? location.href = '../../../pruebaBD/MV_PROTOTIPO_2/pages/adminPanel.php' : location.reload()
+            // location.reload()
+
             localStorage.setItem('userValue', JSON.stringify(values))
             console.log(log, username, type)
         })
-
 })
 
-if (isLogged) {
-    const headerActions = document.querySelector(".login-panel")
-    const sessionContainer = document.querySelector(".session-container")
-    const sessionWelcome = document.querySelector(".session-container .session p")
-    headerActions.classList.toggle("login-panel-hidden")
-    sessionContainer.classList.toggle("session-hidden")
-    sessionWelcome.innerHTML += JSON.parse(localStorage.getItem("userValue")).user
-}
+
+// cerrar session
+
+const logOutSession = document.querySelector(".logOutSession")
+
+logOutSession.addEventListener('click', () => {
+
+    localStorage.clear()
+    location.reload()
+})
+
+// 
+
 
 const loginButton = document.querySelectorAll(".login-session");
 const registrationButton = document.querySelectorAll(".registration-buttom");

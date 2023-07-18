@@ -1,13 +1,5 @@
 <!DOCTYPE html>
 <html lang="es">
-<?php
-session_start();
-
-if (!$_SESSION['username'] || $_SESSION['type'] != "admin") {
-    header("Location: ../index.php");
-}
-
-?>
 
 <head>
     <meta charset="UTF-8">
@@ -19,11 +11,16 @@ if (!$_SESSION['username'] || $_SESSION['type'] != "admin") {
     <!----===== Iconos unicons ===== -->
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
     <link rel="stylesheet" href="../css/cssAdminPanel/adminPanel.css">
-
     <title> Panel de Administradyor </title>
-</head>
 
-<body class="body-adminPanel">
+</head>
+<script>
+    if (JSON.parse(localStorage.getItem("userValue"))?.type != 'admin') {
+        location.href = '../index.php'
+    }
+</script>
+
+<body class="body-adminPanel hidden">
     <nav class="nav-adminPanel">
         <div class="adminPanel-container">
             <div class="logo-container">
@@ -31,7 +28,7 @@ if (!$_SESSION['username'] || $_SESSION['type'] != "admin") {
                     <!-- <img src="../images/logo.png" alt=""> -->
                 </div>
 
-                <span class="logo_name">Bienvenid@ <?php echo ($_SESSION["username"]) ?></span>
+                <span class="logo_name">Bienvenid@</span>
             </div>
 
             <div class="menu-items">

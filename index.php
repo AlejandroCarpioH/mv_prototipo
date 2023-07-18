@@ -117,14 +117,10 @@
             <section class="blog" id="blog">
                 <div class="root">
                     <div>
-                        <div class="root-container" id=<?php echo $class ?>>
-                            <?php
-                            if (isset($_SESSION['username'])) {
-                            ?>
-                                <a href="./pages/videos.php">ir a todos los video</a>
-                            <?php
-                            }
-                            ?>
+                        <div class="root-container hidden">
+
+                            <a href="./pages/videos.php">ir a todos los video</a>
+
                         </div>
                         <div class="view">
                             view

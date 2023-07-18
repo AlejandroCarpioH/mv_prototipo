@@ -1,14 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-<?php
-session_start();
-
-if (!$_SESSION['username']) {
-    header("Location: ../index.php");
-}
-
-
-?>
 
 <head>
     <meta charset="UTF-8">
@@ -16,6 +7,11 @@ if (!$_SESSION['username']) {
     <title>Document</title>
     <link rel="stylesheet" href="../css/cssVideos/style.css">
 </head>
+<script>
+    if (!JSON.parse(localStorage.getItem("userValue"))?.log) {
+        location.href = '../index.php'
+    }
+</script>
 
 <body>
     <a href="../index.php">ir a inicio</a>
@@ -29,18 +25,19 @@ if (!$_SESSION['username']) {
 
 
             </div>
-            <div class="comment-container">
+            <div class="comment-container hidden">
                 <div class="comment-box">
                     <p>
                         comentarios
                     </p>
                 </div>
                 <div class="input-comment" id_video="">
-                    <form action="./setComment.php" method="post">
-                        <textarea placeholder="Escribir comentario" class="text-comment" name="comment" id="" cols="30" rows="10"></textarea>
-                        <input class="input-id-video" name="id_video" value="" hidden>
-                        <input class="input-send-comment" type="submit" value="enter">
-                    </form>
+
+                    <textarea placeholder="Escribir comentario" class="text-comment" name="comment" id="" cols="30" rows="10"></textarea>
+                    <input class="input-id-video" name="id_video" value="" hidden>
+                    <button class="input-send-comment">Enviar</button>
+
+
                 </div>
             </div>
         </div>

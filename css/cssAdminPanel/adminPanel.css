@@ -410,3 +410,6 @@ div[class='top'] input[type='checkbox']:checked ~ .container {
     }
 }
     
+.hidden{
+    display: none;
+}
