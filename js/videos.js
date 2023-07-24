@@ -117,11 +117,12 @@ function handleComment({ id_video }) {
     getComment({ id_video })
         .then(value => {
             value.map(v => {
-                const { user, comment } = v
+                const { user, comment, date } = v
+                console.log(date)
                 const div = document.createElement("div")
                 const p = document.createElement("p")
                 const userComment = document.createElement("p")
-                userComment.innerHTML = `usuario: ${user}`
+                userComment.innerHTML = `usuario: ${user} - ${date}`
                 userComment.classList = "user"
                 p.innerHTML = comment
                 p.classList = "comment"

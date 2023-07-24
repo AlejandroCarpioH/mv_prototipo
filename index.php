@@ -57,12 +57,12 @@
                 <div class="line-2"></div>
             </div>
 
-            <form class="form-reg" action="./php/registration.php" method="post">
+            <form class="form-reg" action="#" method="post">
                 <h1 class="login-title">Registro</h1>
                 <input type="text" class="login-input" name="username" placeholder="Nombre" required />
                 <input type="text" class="login-input" name="email" placeholder="Correo Electronico">
                 <input type="password" class="login-input" name="password" placeholder="Contrasena">
-                <input type="submit" name="submit" value="Crear Cuenta" class="login-button">
+                <input type="button" name="submit" value="Crear Cuenta" class="login-button">
                 <p class="link"><a class="login-session"> Iniciar Sesion </a></p>
             </form>
         </dialog>

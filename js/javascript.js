@@ -11,9 +11,6 @@ if (isLogged) {
     const containerLink = document.querySelector("section .root-container")
 
     containerLink.classList.toggle('hidden')
-
-
-
     headerActions.classList.toggle("login-panel-hidden")
     sessionContainer.classList.toggle("session-hidden")
     sessionWelcome.innerHTML += JSON.parse(localStorage.getItem("userValue")).user
@@ -41,7 +38,6 @@ loginButtom.addEventListener('click', () => {
                 user: username,
                 type: type
             }
-
 
             form.innerHTML = ""
             form.classList.toggle("loading-animate")
