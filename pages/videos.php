@@ -25,11 +25,12 @@
 
 
             </div>
+
             <div class="comment-container hidden">
+                <li class="comment-close" hidden>ocultar</li>
+                <li>comentarios:</li>
                 <div class="comment-box">
-                    <p>
-                        comentarios
-                    </p>
+
                 </div>
                 <div class="input-comment" id_video="">
 
@@ -40,6 +41,10 @@
 
                 </div>
             </div>
+        </div>
+        <div>
+
+            <input type="text">
         </div>
         <div class="videos">
 

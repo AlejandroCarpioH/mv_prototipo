@@ -9,6 +9,19 @@ const videoPlay = document.querySelector(".video-play")
 const url = window.location.href
 const input_id_video = document.querySelector(".input-id-video")
 const commentContainer = document.querySelector(".comment-container")
+const commenctClose = document.querySelector(".comment-close")
+const comment = document.querySelector(".text-comment")
+const commentBox = document.querySelector(".comment-box")
+const inputCommnet = document.querySelector(".input-send-comment")
+const input = document.querySelector(".input-comment")
+
+
+
+commenctClose.addEventListener('click', (e) => {
+    commentBox.classList.toggle("close")
+    input.classList.toggle("close")
+
+})
 // console.log(root.lastElementChild)
 
 
@@ -109,11 +122,9 @@ const getVideos = () => {
     })
 
 }
-const comment = document.querySelector(".text-comment")
-const commentBox = document.querySelector(".comment-box")
-const inputCommnet = document.querySelector(".input-send-comment")
 
-function handleComment({ id_video }) {
+
+export function handleComment({ id_video }) {
     getComment({ id_video })
         .then(value => {
             value.map(v => {
@@ -156,10 +167,9 @@ function sendComment() {
         const user = JSON.parse(localStorage.getItem('userValue'))?.user
         const id_video = input_id_video.value
         setComment({ user, id_video, comm })
-        setTimeout(() => {
-            handleComment({ id_video })
-        }, 1000)
-
+        // setTimeout(() => {
+        //     handleComment({ id_video })
+        // }, 1000)
         comment.value = ""
         comment.focus()
     }

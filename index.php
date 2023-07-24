@@ -41,7 +41,7 @@
                 <h1 class="login-title">Iniciar Sesion</h1>
                 <input type="text" class="login-input" name="username" required placeholder="Username" autofocus="true" />
                 <input type="password" class="login-input" name="password" required placeholder="Password" />
-                <input type="buttom" value="Login" name="submit" class="login-button" />
+                <input type="submit" value="Login" name="submit" class="login-button" />
                 <p class="link"><a class="registration-buttom">Registrate</a></p>
 
             </form>
@@ -62,7 +62,7 @@
                 <input type="text" class="login-input" name="username" placeholder="Nombre" required />
                 <input type="text" class="login-input" name="email" placeholder="Correo Electronico">
                 <input type="password" class="login-input" name="password" placeholder="Contrasena">
-                <input type="button" name="submit" value="Crear Cuenta" class="login-button">
+                <input type="submit" name="submit" value="Crear Cuenta" class="login-button">
                 <p class="link"><a class="login-session"> Iniciar Sesion </a></p>
             </form>
         </dialog>

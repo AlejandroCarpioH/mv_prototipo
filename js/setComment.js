@@ -1,4 +1,5 @@
-export default function setComment({ user, id_video, comm }) {
+import { handleComment } from "./videos.js"
+export default async function setComment({ user, id_video, comm }) {
 
     console.log(`este son los valores ${user} ${id_video} ${comm} `)
     const body = {
@@ -6,11 +7,14 @@ export default function setComment({ user, id_video, comm }) {
         comment: comm,
         id_video: id_video
     }
-    fetch("http://localhost/pruebaBD/MV_PROTOTIPO_2/api/routes/comment.php", {
+    const response = await fetch("http://localhost/pruebaBD/MV_PROTOTIPO_2/api/routes/comment.php", {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
         },
         body: JSON.stringify(body)
     })
+    // console.log(response)
+    handleComment({ id_video })
+
 }

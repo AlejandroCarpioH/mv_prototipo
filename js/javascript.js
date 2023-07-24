@@ -1,8 +1,13 @@
 import getLogin from './getLogin.js'
+import setRegistration from './setRegistration.js'
 
 const isLogged = JSON.parse(localStorage.getItem('userValue'))?.log
 
-console.log(JSON.parse(localStorage.getItem('userValue'))?.type === 'admin')
+if (JSON.parse(localStorage.getItem('userValue'))?.type === 'admin') {
+    const adminPaenl = document.querySelector(".adminpanel")
+
+    adminPaenl.classList.toggle("isAdmin")
+}
 
 if (isLogged) {
     const headerActions = document.querySelector(".login-panel")
@@ -15,11 +20,12 @@ if (isLogged) {
     sessionContainer.classList.toggle("session-hidden")
     sessionWelcome.innerHTML += JSON.parse(localStorage.getItem("userValue")).user
 }
-const loginButtom = document.querySelector(".form-login input[type='buttom']")
+const loginButtom = document.querySelector(".form-login input[type='submit']")
 console.log(isLogged)
 
 // login
-loginButtom.addEventListener('click', () => {
+loginButtom.addEventListener('click', (e) => {
+    e.preventDefault()
     const form = document.querySelector(".form-login")
     const formchildren = []
     for (let index = 0; index < form.children.length; index++) {
@@ -52,6 +58,43 @@ loginButtom.addEventListener('click', () => {
         })
 })
 
+//registration
+
+const registrationButtom = document.querySelector(".form-reg .login-button")
+
+registrationButtom.addEventListener('click', (e) => {
+    e.preventDefault()
+
+    const form = document.querySelector(".form-reg")
+    const formchildren = []
+    for (let index = 0; index < form.children.length; index++) {
+        formchildren.push(form.children[index])
+    }
+
+    const user = form.elements['username'].value
+    const pass = form.elements['password'].value
+    const email = form.elements['email'].value
+    form.innerHTML = "cargando..."
+    form.classList.toggle("loading-animate")
+
+    setRegistration({ user, pass, email })
+        .then(res => {
+            const { response, message } = res
+            alert(message)
+
+
+            form.innerHTML = ""
+            form.classList.toggle("loading-animate")
+            formchildren.map(childen => {
+                form.append(childen)
+            })
+
+        })
+
+
+
+
+})
 
 // cerrar session
 

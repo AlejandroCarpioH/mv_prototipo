@@ -1,6 +1,7 @@
 <?php
-class userRegistrationClass
+class registration
 {
+    private static $response = array();
 
     function __construct(mysqli $con, string $username, string $password, string $email)
     {
@@ -21,25 +22,31 @@ class userRegistrationClass
         $result = $stmt_1->get_result();
 
         if ($result->num_rows > 0) {
-            echo ("<script>alert('nombre de usuario ya existe')</script>");
-            echo '<script>window.location.href = "../index.php"</script>';
+            self::$response["response"] = false;
+            self::$response["message"] = "nombre de usuario ya existe";
+
+            // echo ("<script>alert('nombre de usuario ya existe')</script>");
+            // echo '<script>window.location.href = "../index.php"</script>';
             $con->close();
-        }
+        } else {
+            $query = "INSERT INTO users (username, password, email, create_datetime, fecha_ingreso) VALUES(?,?,?,?,?)";
+            $stmt = $con->prepare($query);
 
-        $query = "INSERT INTO users (username, password, email, create_datetime, fecha_ingreso) VALUES(?,?,?,?,?)";
-        $stmt = $con->prepare($query);
+            $stmt->bind_param("sssss", $username, $password, $email, $date, $date);
 
-        $stmt->bind_param("sssss", $username, $password, $email, $date, $date);
-
-        if ($stmt->execute()) {
-            echo ("<script>alert('se registro correctamente')</script>");
-            echo '<script>window.location.href = "../index.php"</script>';
+            if ($stmt->execute()) {
+                self::$response["response"] = true;
+                self::$response["message"] = "se registro correctamente";
+                // echo ("<script>alert('se registro correctamente')</script>");
+                // echo '<script>window.location.href = "../index.php"</script>';
+            }
         }
     }
 
     // $username = $_POST["username"];
 
-
-
-
+    public static function getRegistration()
+    {
+        return self::$response;
+    }
 }

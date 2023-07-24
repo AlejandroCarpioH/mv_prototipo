@@ -33,7 +33,7 @@
                     <a class="logOutSession" href="">Cerrar Session</a>
                 </div>
 
-                <li>
+                <li class="adminpanel" hidden>
                     <a href="../MV_PROTOTIPO_2/pages/adminPanel.php"> Ir a Panel Administrador</a>
 
                 </li>
