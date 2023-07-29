@@ -7,7 +7,8 @@ export default async function setComment({ user, id_video, comm }) {
         comment: comm,
         id_video: id_video
     }
-    const response = await fetch("http://localhost/pruebaBD/MV_PROTOTIPO_2/api/routes/comment.php", {
+    const ruta = window.location.href.replace('index.php', 'api/routes/comment.php')
+    const response = await fetch(ruta, {
         method: "POST",
         headers: {
             "Content-Type": "application/json"

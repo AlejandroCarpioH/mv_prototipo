@@ -6,7 +6,9 @@ export default async function setRegistration({ user, pass, email }) {
         email: email
     }
 
-    const response = await fetch("http://localhost/pruebaBD/MV_PROTOTIPO_2/api/routes/registration.php", {
+    const ruta = window.location.href.replace('index.php', 'api/routes/registration.php')
+
+    const response = await fetch(ruta, {
         method: "POST",
         headers: {
             "Content-Type": "application/json"

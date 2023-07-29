@@ -80,7 +80,6 @@ registrationButtom.addEventListener('click', (e) => {
     setRegistration({ user, pass, email })
         .then(res => {
             const { response, message } = res
-            alert(message)
 
 
             form.innerHTML = ""
@@ -88,10 +87,9 @@ registrationButtom.addEventListener('click', (e) => {
             formchildren.map(childen => {
                 form.append(childen)
             })
+            alert(message)
 
         })
-
-
 
 
 })

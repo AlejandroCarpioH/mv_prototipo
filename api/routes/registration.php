@@ -16,7 +16,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         "value" => false
     );
 
-
     echo json_encode($login::getRegistration());
     // echo json_encode($result);
 }
