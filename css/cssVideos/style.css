@@ -157,6 +157,11 @@ body{
     .video-play{
         width: 100%;
     }
+    
+}
+@media (max-width: 1016px) {
+   
+    
 }
 @media (max-width: 500px) {
     
@@ -169,6 +174,8 @@ body{
          transform: scale(1);   
         }
     }
+   
+    
 }
 
 .hidden{
@@ -189,12 +196,12 @@ body{
     }
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 1016px) {
     .comment-close{
         display: block;
     }
+    .video-play-container .close{
+        display: none;
+    }
 }
 
-.video-play-container .close{
-    display: none;
-}

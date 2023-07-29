@@ -10,6 +10,7 @@ loginButtom.addEventListener('click', () => {
     const pass = form.elements['password'].value
     getLogin({ user, pass })
         .then(response => {
+            console.log(response)
             const { log, username, type } = response
             const values = {
                 log: log,

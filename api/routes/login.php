@@ -2,6 +2,7 @@
 
 require("../connection.php");
 require("../loginclass.php");
+header('Content-Type: application/json; charset=utf-8');
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
@@ -16,6 +17,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         "value" => false
     );
 
-
-    echo json_encode($login::getLogin());
+    $response = json_encode($login::getLogin());
+    echo $response;
 }

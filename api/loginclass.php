@@ -1,5 +1,6 @@
 <?php
 header('Content-Type: text/html; charset=UTF-8');
+
 class login
 {
 
@@ -23,7 +24,8 @@ class login
             self::$log['username'] = $results['username'];
             self::$log['type'] = $results['type'];
         } else {
-            $message = mb_convert_encoding('contraseña o usuario incorrecto', 'UTF-8', 'ISO-8859-1');
+            // $message = mb_convert_encoding('contraseñaaasdas o usuario incorrecto', 'ISO-8859-1', 'UTF-8');
+            $message = 'contraseña o usuario incorrecto';
             self::$log['log'] = false;
             self::$log['message'] = $message;
         }

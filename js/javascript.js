@@ -38,23 +38,30 @@ loginButtom.addEventListener('click', (e) => {
     form.classList.toggle("loading-animate")
     getLogin({ user, pass })
         .then(response => {
-            const { log, username, type } = response
-            const values = {
-                log: log,
-                user: username,
-                type: type
+            if (response.log) {
+
+                const { log, username, type } = response
+                const values = {
+                    log: log,
+                    user: username,
+                    type: type
+                }
+
+                form.innerHTML = ""
+                form.classList.toggle("loading-animate")
+                formchildren.map(childen => {
+                    form.append(childen)
+                })
+                const ruta = window.location.href.replace('index.php', 'pages/adminPanel.php')
+                type === 'admin' ? location.href = ruta : location.reload()
+                // location.reload()
+
+                localStorage.setItem('userValue', JSON.stringify(values))
+                console.log(log, username, type)
+            } else {
+                alert(response.message)
+                location.reload()
             }
-
-            form.innerHTML = ""
-            form.classList.toggle("loading-animate")
-            formchildren.map(childen => {
-                form.append(childen)
-            })
-            type === 'admin' ? location.href = '../../../pruebaBD/MV_PROTOTIPO_2/pages/adminPanel.php' : location.reload()
-            // location.reload()
-
-            localStorage.setItem('userValue', JSON.stringify(values))
-            console.log(log, username, type)
         })
 })
 

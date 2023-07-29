@@ -20,6 +20,7 @@ const input = document.querySelector(".input-comment")
 commenctClose.addEventListener('click', (e) => {
     commentBox.classList.toggle("close")
     input.classList.toggle("close")
+    commentBox.classList.contains('close') ? commenctClose.textContent = 'mostrar' : commenctClose.textContent = 'ocultar'
 
 })
 // console.log(root.lastElementChild)
@@ -58,7 +59,7 @@ const getVideos = () => {
     // -----
     const limit = 2
     getApiVimeo({ limit }).then(data => {
-        console.log(data)
+        // console.log(data)
         data['data'].map(value => {
 
             const { html } = value['embed']
@@ -129,7 +130,7 @@ export function handleComment({ id_video }) {
         .then(value => {
             value.map(v => {
                 const { user, comment, date } = v
-                console.log(date)
+                // console.log(date)
                 const div = document.createElement("div")
                 const p = document.createElement("p")
                 const userComment = document.createElement("p")
@@ -162,7 +163,7 @@ function handleKey(event) {
 }
 function sendComment() {
     if (comment.value != "") {
-        console.log(comment.value)
+        // console.log(comment.value)
         const comm = comment.value
         const user = JSON.parse(localStorage.getItem('userValue'))?.user
         const id_video = input_id_video.value
@@ -177,4 +178,4 @@ function sendComment() {
 
 getVideos()
 
-console.log("asas")
+// console.log("asas")
